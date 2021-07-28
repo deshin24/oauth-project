@@ -32,4 +32,13 @@ public class User extends BaseTimeEntity{
         this.email = email;
         this.role = role;
     }
+
+    public User update(String name){
+        this.name = name;
+        return this;
+    }
+
+    public String getRoleKey(){
+        return this.role.getKey();
+    }
 }
