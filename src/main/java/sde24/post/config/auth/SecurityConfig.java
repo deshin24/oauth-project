@@ -15,10 +15,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(HttpSecurity security) throws Exception {
         security
-                .csrf().disable().headers().frameOptions().disable() // h2-console 화면 사용위해 해당 옵션들 disable
-            .and()
                 .authorizeRequests() // 권한 별 관리 설정의 시작점
-                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll() // 전체 열람 권한
+                .antMatchers("/").permitAll() // 전체 열람 권한
                 .antMatchers("/admin").hasRole(Role.ADMIN.name()) // "/admin"주소를 가진 api는 ADMIN 권한을 가진 사람들만 접근 가능
                 .anyRequest().authenticated() // 나머지 주소는 모든 로그인한 사용자 접근 가능
             .and()
