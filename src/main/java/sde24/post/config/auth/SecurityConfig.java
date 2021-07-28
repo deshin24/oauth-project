@@ -19,7 +19,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
                 .authorizeRequests() // 권한 별 관리 설정의 시작점
                 .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**").permitAll() // 전체 열람 권한
-                .antMatchers("/admin/*").hasRole(Role.ADMIN.name()) // "/admin/*"주소를 가진 api는 ADMIN 권한을 가진 사람들만 접근 가능
+                .antMatchers("/admin").hasRole(Role.ADMIN.name()) // "/admin"주소를 가진 api는 ADMIN 권한을 가진 사람들만 접근 가능
                 .anyRequest().authenticated() // 나머지 주소는 모든 로그인한 사용자 접근 가능
             .and()
                 .logout().logoutSuccessUrl("/") // 로그아웃 성공시 "/"주소로 이동
