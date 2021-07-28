@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Getter
 @MappedSuperclass // 공통 매핑 정보 super class
 @EntityListeners(AuditingEntityListener.class) //  등록, 수정 될때 자동으로 시간을 저장해줌
-public class BaseTimeEntity {
+public abstract class BaseTimeEntity {
     @CreatedDate
     private LocalDateTime createdDate;
 
