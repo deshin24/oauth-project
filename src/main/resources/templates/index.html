@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Hello</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <div>
+        <a href="oauth2/authorization/google" role="button"> Google Login </a>
+        <br>
+        <p th:if="${userName}"> 이름 : <span th:text="${userName}"></span></p>
+    </div>
+
+</body>
+</html>
