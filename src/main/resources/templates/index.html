@@ -5,14 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
 <body>
-    <div>
-        <a href="oauth2/authorization/google" role="button"> Google Login </a>
+    <div th:if="${user != null and user != ''}">
+        <a href="/logout" role="button"> LogOut </a><br>
+        이름 : <span th:text="${user.getName()}"></span><br>
+        권한 : <span th:text="${user.getRole().getValue()}"></span>
         <br>
-        <p th:if="${userName}"> 이름 : <span th:text="${userName}"></span></p>
+        <a href="/admin"> admin 페이지로 이동 </a>
     </div>
-
-    <br>
-    <a href="/admin"> admin 페이지로 이동 </a>
-
+    <div th:unless="${user != null and user != ''}" >
+        <a href="oauth2/authorization/google" role="button"> Google Login </a>
+    </div>
 </body>
 </html>
