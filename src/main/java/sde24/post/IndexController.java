@@ -21,7 +21,7 @@ public class IndexController {
         // CustomOAuth2UserService 에서 세팅한 user
         SessionUser user = (SessionUser) httpSession.getAttribute("user");
         if(user != null){
-            model.addAttribute("userName", user.getName());
+            model.addAttribute("user", user);
         }
         return "index";
     }
