@@ -16,7 +16,7 @@
 #### 과정 이미지 첨부
 <img width="500" alt="google oauth 과정" src="https://user-images.githubusercontent.com/88015037/127441499-e20b87c3-ebc5-4e0c-bf95-5b4d3d71faa2.png">
 1. 사용자가 애플리케이션에 접근 리소스 서버(구글)의 서비스 이용 시도.<br>   
-2. 소셜 로그인 인증 시도. <br>  
+2. 소셜 로그인 인증  <br>  
 3. 인증 시 Client Id, Client Secret 전송. <br>
 4. Scope List(사용희망하는 서비스 리스트) 확인. <br>  
 5. 확인 후 authorization code 발급.  <br>    
