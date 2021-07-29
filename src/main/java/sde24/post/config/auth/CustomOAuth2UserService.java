@@ -10,6 +10,7 @@ import org.springframework.security.oauth2.core.user.DefaultOAuth2User;
 import org.springframework.security.oauth2.core.user.OAuth2User;
 import org.springframework.stereotype.Service;
 import sde24.post.config.auth.dto.OAuthAttributes;
+import sde24.post.config.auth.dto.SessionUser;
 import sde24.post.entity.User;
 import sde24.post.repository.UserRepository;
 
@@ -26,10 +27,12 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
     @Override
     public OAuth2User loadUser(OAuth2UserRequest oAuth2UserRequest) throws OAuth2AuthenticationException {
-        OAuth2UserService<OAuth2UserRequest, OAuth2User> delegate = new DefaultOAuth2UserService(); // OAuth2UserService의 구현체, userRequest의 정보를 빼낸다
+        // OAuth2UserService 의 구현체, loadUser메서드를 사용하여 oAuth2UserRequest의 정보를 빼낸다
+        OAuth2UserService<OAuth2UserRequest, OAuth2User> delegate = new DefaultOAuth2UserService();
         OAuth2User oAuth2User = delegate.loadUser(oAuth2UserRequest);
 
-        // OAuth2 로그인 진행 시 키가 되는 필드 값(PK) - 구글의 경우 code
+
+        // OAuth2 로그인 진행 시 키가 되는 필드 값(PK)
         String userNameAttributeName = oAuth2UserRequest.getClientRegistration()
                 .getProviderDetails().getUserInfoEndpoint().getUserNameAttributeName();
 

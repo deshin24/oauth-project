@@ -1,4 +1,4 @@
-package sde24.post.config.auth;
+package sde24.post.config.auth.dto;
 
 import lombok.Getter;
 import sde24.post.entity.Role;

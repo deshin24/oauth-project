@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import sde24.post.config.auth.SessionUser;
+import sde24.post.config.auth.dto.SessionUser;
 import sde24.post.repository.UserRepository;
 
 import javax.servlet.http.HttpSession;
