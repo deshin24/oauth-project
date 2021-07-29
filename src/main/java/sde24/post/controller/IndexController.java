@@ -1,4 +1,4 @@
-package sde24.post;
+package sde24.post.controller;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
