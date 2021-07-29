@@ -8,8 +8,12 @@
     <div th:if="${user != null and user != ''}">
         <a href="/logout" role="button"> LogOut </a><br>
         이름 : <span th:text="${user.getName()}"></span><br>
-        권한 : <span th:text="${user.getRole().getValue()}"></span>
-        <br>
+        권한 : <span th:text="${user.getRole().getValue()}"></span><br><br>
+        <span th:if="${#strings.equals(user.getRole(),'USER')}">
+            <form th:action="@{'/user/'+ ${user.email}}" method="post">
+                <input type="submit" value="admin 으로 권한 변경">
+            </form>
+        </span> <br><br>
         <a href="/admin"> admin 페이지로 이동 </a>
     </div>
     <div th:unless="${user != null and user != ''}" >
@@ -17,3 +21,6 @@
     </div>
 </body>
 </html>
+<script>
+
+</script>
